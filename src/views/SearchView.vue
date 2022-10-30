@@ -34,7 +34,7 @@
           </h4>
 
           <p class="search-view__item-description">
-            {{ newsItem.description }}
+            {{ newsItem.summary }}
           </p>
         </div>
       </div>
@@ -57,8 +57,7 @@ const newsSearched = computed(() => news.value.filter((newsItem) => newsItem.tit
 
 onMounted(async () => {
   isLoading.value = true;
-  const { articles } = await getNews();
-  news.value = articles;
+  news.value = await getNews();
   isLoading.value = false;
 });
 </script>
