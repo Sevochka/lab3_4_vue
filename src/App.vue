@@ -15,20 +15,26 @@
 
 <script setup>
 import CommonTabs from '@/components/common/CommonTabs.vue';
-import { computed, ref } from 'vue';
+import { computed, onMounted, ref } from 'vue';
 import ServicesView from '@/views/ServicesView.vue';
 import SearchView from '@/views/SearchView.vue';
+import ImagesView from '@/views/ImagesView.vue';
 
 const tabs = [
   {
-    label: 'Лаб.3 - Услуги',
+    label: 'Услуги',
     value: 'services',
     component: ServicesView,
   },
   {
-    label: 'Лаб.4 - Поиск',
+    label: 'Поиск',
     value: 'search',
     component: SearchView,
+  },
+  {
+    label: 'Картинки',
+    value: 'images',
+    component: ImagesView,
   },
 ];
 
@@ -39,19 +45,40 @@ const currentView = computed(() => {
 
   return tab.component;
 });
+
+const getCurrentTabFromUrl = () => {
+  const url = new URL(window.location.href);
+  const tab = url.searchParams.get('tab');
+
+  if (tab) {
+    activeTab.value = tab;
+  }
+};
+
+onMounted(() => {
+  getCurrentTabFromUrl();
+});
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .app {
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 2rem;
 
   &__content {
     border: 1px solid $color-primary;
     border-radius: 0.25rem;
-    width: 40rem;
+    max-width: 40rem;
+    width: 100%;
     height: 30rem;
+
+    @include layout-mobile {
+      max-width: 100%;
+      height: 90%;
+    }
   }
 }
 </style>

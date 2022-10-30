@@ -36,10 +36,11 @@ const handleTabClick = (tab) => {
 
 <style lang="scss" scoped>
 .common-tabs {
+  margin-bottom: 2rem;
+
   &__tabs {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
   }
 
   &__tab {

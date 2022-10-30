@@ -126,12 +126,16 @@ const handleServiceClick = (service) => {
   }
 
   &__list {
-    padding: 0 7rem 1rem 7rem;
+    padding: 0 15% 1rem 15%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
     overflow: auto;
+
+    @include layout-mobile {
+      padding: 0 5% 1rem 5%;
+    }
 
     &::-webkit-scrollbar {
       width: 0.5rem;
@@ -190,6 +194,10 @@ const handleServiceClick = (service) => {
     color: white;
     width: 100%;
     padding: 1rem 8rem;
+
+    @include layout-mobile {
+      padding: 1rem 5%;
+    }
   }
 }
 
