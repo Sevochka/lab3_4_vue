@@ -17,6 +17,7 @@
     "vue": "^3.2.40"
   },
   "devDependencies": {
+    "gh-pages": "^4.0.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.25.0",
