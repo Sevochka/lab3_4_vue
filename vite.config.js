@@ -10,11 +10,11 @@ export default defineConfig({
   plugins: [vue(), VitePWA({
     includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'sirena.svg'],
     manifest: {
-      name: 'Платформа Winline и RPL',
-      short_name: 'Winline Платформа',
-      description: 'Играйте, побеждайте и получайте бонусы от Winline!',
-      theme_color: '#02035d',
-      background_color: '#02035d',
+      name: 'Sevka',
+      short_name: 'Sevka',
+      description: 'Тут описание приложения, но его нет, хехех',
+      theme_color: '#fff',
+      background_color: '#fff',
       icons: [
         {
           src: 'icons/icon-48x48.png',
